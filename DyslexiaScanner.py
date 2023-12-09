@@ -122,3 +122,30 @@ print(f'Precision: {pre.result().numpy()}, Recall: {re.result().numpy()}, Accura
 
 # Save Model
 model.save(os.path.join('models', 'dyslexia_scanner.h5'))
+
+# # Test Model
+# from tensorflow.keras.models import load_model
+# import tensorflow as tf
+# import os
+# import cv2
+# import numpy as np
+# from matplotlib import pyplot as plt
+
+# new_model = load_model(os.path.join('models', 'dyslexia_scanner.h5'))
+
+# img = cv2.imread('test_dyslexia.jpeg')
+# plt.imshow(img)
+# plt.show()
+
+# resize = tf.image.resize(img, (256,256))
+# plt.imshow(resize.numpy().astype(int))
+# plt.show()
+
+# yhat = new_model.predict(np.expand_dims(resize/255, 0))
+
+# print(yhat)
+
+# if yhat > 0.5:
+#     print(f'unfortunately you have >50% chance of suffering from dyslexia.')
+# else:
+#     print(f'congratulations, you are normal')
