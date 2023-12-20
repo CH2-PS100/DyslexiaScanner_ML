@@ -121,7 +121,7 @@ for batch in test.as_numpy_iterator():
 print(f'Precision: {pre.result().numpy()}, Recall: {re.result().numpy()}, Accuracy: {acc.result().numpy()}')
 
 # Save Model
-model.save(os.path.join('models', 'dyslexia_scanner.h5'))
+#model.save(os.path.join('models', 'dyslexia_scanner.h5'))
 
 # # Test Model
 # from tensorflow.keras.models import load_model
